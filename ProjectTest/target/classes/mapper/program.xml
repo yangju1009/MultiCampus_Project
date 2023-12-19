@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="program">
+	<select id="list" parameterType="com.multi.project.ProgramVO"
+		resultType="com.multi.project.ProgramVO">
+		select * from program_a
+	</select>
+
+
+	<select id="search" parameterType="com.multi.project.ProgramVO"
+		resultType="com.multi.project.ProgramVO">
+		SELECT * FROM program_a
+		<where>
+			<if test="Keyword != null and Keyword != ''">
+				title LIKE CONCAT('%',#{keyword},'%')
+			</if>
+		</where>
+	</select>
+
+	<delete id="delete" parameterType="com.multi.project.ProgramVO">
+		DELETE FROM program_a WHERE program_id = #{program_id}
+	</delete>
+
+</mapper>

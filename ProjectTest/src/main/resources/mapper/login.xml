@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="login">
+	<insert id="insert" parameterType="loginVO">
+		insert into member_c2
+		values (
+		#{id_member},
+		#{pw},
+		#{name},
+		#{birth},
+		#{gender},
+		#{addr},
+		#{tel},
+		#{alarm})
+	</insert>
+</mapper>
